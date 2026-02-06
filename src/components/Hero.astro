@@ -1,0 +1,185 @@
+---
+
+---
+
+<section
+  class="w-full grid grid-cols-1 grid-rows-1 lg:grid-cols-2 gap-4 items-center"
+  id="hero"
+>
+  <div class="w-full grid h-screen place-items-center py-10">
+    <div id="my_title" class="text-center -mt-34">
+      <h1 class="font-bold text-6xl">Julius F. Witte</h1>
+      <h2 class="text-3xl text-cyan-500">Software & Web Developer</h2>
+      <div class="font-mono font-bold text-sm pt-2">
+        <pre id="canvas"></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid place-items-center px-10 xl:px-20 gap-8">
+    <div
+      id="about_me"
+      class="w-full grid place-items-left border-white border-3 hover:border-cyan-500 rounded-3xl px-5"
+    >
+      <div class="flex -mt-5">
+        <h1 class="font-bold text-3xl bg-black px-4">About Me</h1>
+      </div>
+      <div class="px-4 pb-4 text-xl">
+        <div class="grid place-items-left grid-cols-1 md:grid-cols-2">
+          <span class="text-cyan-500">Age Level</span>
+          <span id="current_age">32</span>
+        </div>
+        <div class="grid place-items-left grid-cols-1 md:grid-cols-2">
+          <span class="text-cyan-500">Base</span>
+          <span>North Germany</span>
+        </div>
+        <div class="grid place-items-left grid-cols-1 md:grid-cols-2">
+          <span class="text-cyan-500">Education</span>
+          <span>MSc Bioinformatics</span>
+        </div>
+        <div class="grid place-items-left grid-cols-1 md:grid-cols-2">
+          <span class="text-cyan-500">Professional</span>
+          <span id="work_time">2+ Years</span>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="xp"
+      class="w-full grid place-items-left border-white border-3 hover:border-cyan-500 rounded-3xl px-5"
+    >
+      <div class="flex -mt-5">
+        <h1 class="font-bold text-3xl bg-black px-4">XP</h1>
+      </div>
+      <div class="px-4 pb-4 text-xl">
+        <div class="grid place-items-left grid-cols-1 md:grid-cols-2">
+          <span class="text-cyan-500">2025 - TODAY</span>
+          <a
+            class="hover:text-amber-500 underline"
+            href="https://osiris-solutions.de/"
+            target="_blank">Osiris Solutions GmbH</a
+          >
+          <br />
+          <span class="text-base">Software Developer</span>
+        </div>
+        <div class="grid place-items-left grid-cols-1 md:grid-cols-2">
+          <span class="text-cyan-500">2023 - 2026</span>
+          <span>Leibniz Insitut DSMZ</span>
+          <br />
+          <span class="text-base">Scientific Associate / Web Developer</span>
+        </div>
+        <div class="grid place-items-left grid-cols-1 md:grid-cols-2">
+          <span class="text-cyan-500">2023</span>
+          <span>University of Hamburg</span>
+          <br />
+          <span class="text-base">Master of Science - Bioinformatics</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  const d = new Date();
+  let this_year = d.getFullYear();
+  let month = d.getMonth();
+  let day = d.getDate();
+
+  const workTime = document.getElementById("work_time");
+  workTime.innerText = this_year - 2023 + "+ Years";
+
+  const currentAge = document.getElementById("current_age");
+  if ((month == 11 && day >= 23) || month == 12) {
+    currentAge.innerText = this_year - 1993;
+  } else {
+    currentAge.innerText = this_year - 1994;
+  }
+
+  const canvas = document.getElementById("canvas");
+
+  const frames = [
+    `
+   )     )   
+      ) (    
+     (       
+|'''''''''|-.
+|         |-'
+\\_______/  
+`,
+    `
+     (  )    
+      )      
+  (          
+|'''''''''|-.
+|         |-'
+\\_______/  
+`,
+    `
+     (       
+   )         
+  (     (    
+|'''''''''|-.
+|         |-'
+\\_______/  
+`,
+    `
+  (          
+   )     )   
+      ) (    
+|'''''''''|-.
+|         |-'
+\\_______/  
+`,
+    `
+  (     (    
+     (   )   
+      )      
+|'''''''''|-.
+|         |-'
+\\_______/  
+`,
+    `
+      ) (    
+     (       
+   )         
+|'''''''''|-.
+|         |-'
+\\_______/  
+`,
+    `
+      )      
+  (          
+   )     )   
+|'''''''''|-.
+|         |-'
+\\_______/  
+`,
+    `
+   )         
+  (     (   
+     (   )   
+|'''''''''|-.
+|         |-'
+\\_______/  
+`,
+  ];
+
+  let index = 0;
+  canvas.innerText = frames[index];
+
+  var intervalId = null;
+  const myTitle = document.getElementById("my_title");
+  myTitle.addEventListener("mouseover", () => {
+    if (intervalId) return;
+
+    intervalId = setInterval(() => {
+      canvas.innerText = frames[index];
+      index = (index + 1) % frames.length;
+    }, 300);
+  });
+
+  myTitle.addEventListener("mouseleave", () => {
+    clearInterval(intervalId);
+    intervalId = null;
+  });
+</script>

@@ -1,0 +1,23 @@
+---
+import '../styles/global.css';
+
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+---
+
+<html lang="en" class="overflow-x-hidden!">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Julius Witte</title>
+	</head>
+	<body class="bg-black text-white tracking-wide">
+		<header class="fixed top-0 w-full z-9999"><Navbar /></header>
+		<main class="pt-34 w-full md:pt-20"><slot /></main>
+		<footer><Footer /></footer>
+	</body>
+</html>
