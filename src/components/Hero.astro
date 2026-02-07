@@ -111,10 +111,10 @@ import Box from "./Box.astro";
 </section>
 
 <script is:inline>
-  const d = new Date();
-  let this_year = d.getFullYear();
-  let month = d.getMonth();
-  let day = d.getDate();
+  const da = new Date();
+  let this_year = da.getFullYear();
+  let month = da.getMonth();
+  let day = da.getDate();
 
   const workTime = document.getElementById("work_time");
   workTime.innerText = this_year - 2023 + "+ Years";

@@ -8,7 +8,11 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  outDir: './docs'
+  outDir: './docs',
+  build: {
+    assets: 'assets'
+  }
+
 });
 
 {
