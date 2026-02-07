@@ -1,18 +1,12 @@
 ---
-
+import Box from "./Box.astro"
 ---
 
 <section
   id="content"
   class="h-full grid grid-cols-1 lg:grid-cols-2 items-start place-items-center px-10 xl:px-20 gap-8 mt-8"
 >
-  <div
-    id="projects"
-    class="w-full grid grid-cols-1 place-items-left border-white border-3 hover:border-cyan-500 rounded-3xl px-5"
-  >
-    <div class="flex -mt-5">
-      <h1 class="font-bold text-3xl bg-black px-4">Projects</h1>
-    </div>
+  <Box box_id="projects" box_title="Projects">
 
     <div class="flex-wrap pt-2 px-4 pb-4 text-xl place-content-between">
       <div
@@ -118,15 +112,9 @@
         </p>
       </div>
     </div>
-  </div>
+  </Box>
 
-  <div
-    id="skills"
-    class="w-full grid grid-cols-1 place-items-left border-white border-3 hover:border-cyan-500 rounded-3xl px-5"
-  >
-    <div class="flex -mt-5">
-      <h1 class="font-bold text-3xl bg-black px-4">Skills</h1>
-    </div>
+  <Box box_id="skills" box_title="Skills">
 
     <div class="flex-wrap pt-2 px-4 pb-4 text-xl place-content-between">
       <div class="-mx-3 my-2 px-3 pb-2 bg-white text-black rounded-2xl py-1">
@@ -171,7 +159,7 @@
         <span id="skill_shell" class="skill">Shell</span>
       </div>
     </div>
-  </div>
+  </Box>
 </section>
 
 <script>

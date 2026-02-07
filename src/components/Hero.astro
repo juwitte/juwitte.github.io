@@ -1,5 +1,5 @@
 ---
-
+import Box from "./Box.astro";
 ---
 
 <section
@@ -8,7 +8,7 @@
 >
   <div class="w-full grid h-screen place-items-center py-10">
     <div id="my_title" class="text-center -mt-34">
-      <h1 class="font-bold text-6xl">Julius F. Witte</h1>
+      <h1 class="font-bold text-6xl xl:text-7xl">Julius F. Witte</h1>
       <h2 class="text-3xl text-cyan-500">Software & Web Developer</h2>
       <div class="font-mono font-bold text-sm pt-2">
         <pre id="canvas"></pre>
@@ -17,65 +17,89 @@
   </div>
 
   <div class="grid place-items-center px-10 xl:px-20 gap-8">
-    <div
-      id="about_me"
-      class="w-full grid place-items-left border-white border-3 hover:border-cyan-500 rounded-3xl px-5"
-    >
-      <div class="flex -mt-5">
-        <h1 class="font-bold text-3xl bg-black px-4">About Me</h1>
-      </div>
-      <div class="px-4 pb-4 text-xl">
-        <div class="grid place-items-left grid-cols-1 md:grid-cols-2">
+    <Box box_id="about_me" box_title="About Me">
+      <div class="grid gap-1">
+        <div class="grid place-items-left grid-cols-1 md:grid-cols-3">
           <span class="text-cyan-500">Age Level</span>
-          <span id="current_age">32</span>
+          <span id="current_age" class="col-span-2">32</span>
         </div>
-        <div class="grid place-items-left grid-cols-1 md:grid-cols-2">
-          <span class="text-cyan-500">Base</span>
-          <span>North Germany</span>
+        <div class="grid place-items-left grid-cols-1 md:grid-cols-3">
+          <span class="text-cyan-500">Based In</span>
+          <span class="col-span-2">Wolfenbüttel, DE</span>
         </div>
-        <div class="grid place-items-left grid-cols-1 md:grid-cols-2">
+        <div class="grid place-items-left grid-cols-1 md:grid-cols-3">
           <span class="text-cyan-500">Education</span>
-          <span>MSc Bioinformatics</span>
+          <span class="col-span-2">MSc Bioinformatics</span>
         </div>
-        <div class="grid place-items-left grid-cols-1 md:grid-cols-2">
+        <div class="grid place-items-left grid-cols-1 md:grid-cols-3">
           <span class="text-cyan-500">Professional</span>
-          <span id="work_time">2+ Years</span>
+          <span id="work_time" class="col-span-2">2+ Years</span>
         </div>
       </div>
-    </div>
+    </Box>
 
-    <div
-      id="xp"
-      class="w-full grid place-items-left border-white border-3 hover:border-cyan-500 rounded-3xl px-5"
-    >
-      <div class="flex -mt-5">
-        <h1 class="font-bold text-3xl bg-black px-4">XP</h1>
-      </div>
-      <div class="px-4 pb-4 text-xl">
-        <div class="grid place-items-left grid-cols-1 md:grid-cols-2">
+    <Box box_id="xp" box_title="XP">
+      <div class="grid gap-3">
+        <div class="grid place-items-left grid-cols-1 md:grid-cols-3">
           <span class="text-cyan-500">2025 - TODAY</span>
-          <a
-            class="hover:text-amber-500 underline"
-            href="https://osiris-solutions.de/"
-            target="_blank">Osiris Solutions GmbH</a
-          >
-          <br />
-          <span class="text-base">Software Developer</span>
+          <div class="col-span-2">
+            <span class="">Software Developer</span>
+            <br />
+            <a
+              class="hover:text-amber-500 text-xl flex gap-1"
+              href="https://osiris-solutions.de/"
+              target="_blank"
+              >@ Osiris Solutions GmbH
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="23"
+                height="23"
+                fill="#ffffff"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M228,104a12,12,0,0,1-24,0V69l-59.51,59.51a12,12,0,0,1-17-17L187,52H152a12,12,0,0,1,0-24h64a12,12,0,0,1,12,12Zm-44,24a12,12,0,0,0-12,12v64H52V84h64a12,12,0,0,0,0-24H48A20,20,0,0,0,28,80V208a20,20,0,0,0,20,20H176a20,20,0,0,0,20-20V140A12,12,0,0,0,184,128Z"
+                >
+                </path>
+              </svg>
+            </a>
+          </div>
         </div>
-        <div class="grid place-items-left grid-cols-1 md:grid-cols-2">
+        <div class="grid place-items-left grid-cols-1 md:grid-cols-3">
           <span class="text-cyan-500">2023 - 2026</span>
-          <span>Leibniz Insitut DSMZ</span>
-          <br />
-          <span class="text-base">Scientific Associate / Web Developer</span>
+          <div class="col-span-2">
+            <span>Scientific Web Developer</span>
+            <br />
+            <a
+              class="hover:text-amber-500 text-xl flex gap-1"
+              href="https://www.dsmz.de/"
+              target="_blank"
+              >@ Leibniz Insitut DSMZ
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="23"
+                height="23"
+                fill="#ffffff"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M228,104a12,12,0,0,1-24,0V69l-59.51,59.51a12,12,0,0,1-17-17L187,52H152a12,12,0,0,1,0-24h64a12,12,0,0,1,12,12Zm-44,24a12,12,0,0,0-12,12v64H52V84h64a12,12,0,0,0,0-24H48A20,20,0,0,0,28,80V208a20,20,0,0,0,20,20H176a20,20,0,0,0,20-20V140A12,12,0,0,0,184,128Z"
+                >
+                </path>
+              </svg>
+            </a>
+          </div>
         </div>
-        <div class="grid place-items-left grid-cols-1 md:grid-cols-2">
+        <div class="grid place-items-left grid-cols-1 md:grid-cols-3">
           <span class="text-cyan-500">2023</span>
-          <span>University of Hamburg</span>
-          <br />
-          <span class="text-base">Master of Science - Bioinformatics</span>
+          <div class="col-span-2">
+            <span>Master of Science - Bioinformatics</span>
+            <br />
+            <span class="text-xl">@ University of Hamburg</span>
+          </div>
         </div>
       </div>
-    </div>
+    </Box>
   </div>
 </section>
 
